@@ -1,0 +1,8 @@
+{
+  "name": "Cinephase",
+  "description": "An advanced secure film distribution and post-production workspace with dynamic 3D integrations, Blender render sequencers, secure gate login, and comprehensive design system documentation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
