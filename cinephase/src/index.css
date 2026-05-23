@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes scanner {
+    0% {
+      top: 0%;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  .animate-scanner {
+    animation: scanner 4s ease-in-out infinite;
+  }
+}
+
+/* HIGH-FIDELITY WEB-TO-PDF PRINT STYLES */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  /* Hide all generic interactive components on screen */
+  body > div:not(#print-source) {
+    display: none !important;
+  }
+  
+  /* Ensure the printed container is visible and styled beautifully */
+  #print-source {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white !important;
+    color: black !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+
+  /* Make sure background colors, text colors and structures match paper guidelines */
+  .bg-\[\#121212\], .bg-\[\#1c1b1b\], .bg-zinc-900, .bg-\[\#0A0A0A\] {
+    background-color: #f9f9f9 !important;
+    border-color: #e5e7eb !important;
+    color: #111111 !important;
+  }
+  
+  .text-white {
+    color: #000000 !important;
+  }
+  
+  .text-zinc-400, .text-zinc-500 {
+    color: #4b5563 !important;
+  }
+  
+  nav, button, input, select, aside, footer {
+    display: none !important;
+  }
+}
