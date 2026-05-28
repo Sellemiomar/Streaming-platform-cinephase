@@ -26,10 +26,11 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
+          cache-dependency-path: './cinephase/package-lock.json'
 
       - name: Install dependencies
         working-directory: ./cinephase
-        run: npm install
+        run: npm install --prefer-offline --no-audit
 
       - name: Build project
         working-directory: ./cinephase
